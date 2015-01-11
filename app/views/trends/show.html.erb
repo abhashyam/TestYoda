@@ -1,0 +1,57 @@
+<!DOCTYPE HTML SYSTEM>
+<html lang='en'>
+<head>
+  <meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+    <link rel=\"icon\" href=\"#{@bar_chart_image}\" type=\"image/png\">
+    <title>Right API Automation #{report_type.capitalize()} Test Trend Chart, Shard #{@shard}</title>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+        google.load('visualization', '1', {packages:['corechart']});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([]);
+          var options = {
+            areaOpacity: '0.2',
+            colors: ['green', 'red'],
+            hAxis: {title: 'Date'},
+            vAxis: {title: 'Test Count'},
+            chartArea: {top:10},
+            lineWidth: 1
+          };
+          var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+          }
+      </script>
+  </head>
+  <body>
+    <div id="header">
+    <div id="logo"><a href="http://my.rightscale.com/" target="_blank"><img src="#{@right_scale_logo_image}" alt="rightscale logo"></a>
+    <span id="chartheader">Continuous Regression Right API Test Results</span>
+    </div>
+    </div>
+    <div id="report">
+    <font size=#{@td_font_size} face="sans-serif" color='black'>
+      <object>
+        <center>
+          <table border='0' align='center' cellpadding = "4" cellspacing="0" summary='none'>
+            <tr>
+              <td align='left'>
+                <h2>Right API Automation #{chart_title} Test Trend Chart</h2>
+                <h3>Environment #{@environment}, Shard #{@shard}</h3>
+                <h3>#{@pst_time_string}</h3>
+              </td>
+            </tr>
+          </table>
+          <div id='chart_div' style='width: #{width}px; height: #{height}px;'></div>
+          <font size=#{@td_font_size} face="sans-serif" color='black'>
+          </font>
+        </center>
+      </object>
+      </font>
+      </div><br><br>
+      <div id="footer">
+        <span id="chartfooter">Generated #{@pst_time_string} from #{@computer_name}</span>
+        <div id="monkey"></div>
+      </div>
+  </body>
+</html>

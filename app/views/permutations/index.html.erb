@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>sha</th>
+    <th>last_success</th>
+    <th>application</th>
+    <th>ServerMetadata</th>
+  </tr>
+  <% @permutations.each do |permutation| %>
+    <tr>
+      <td><%= permutation.id %></td>
+      <td><%= permutation.Name %></td>
+      <td><%= permutation.sha %></td>
+      <td><%= permutation.last_success %></td>
+      <td><%= permutation.application %></td>
+      <td><%= permutation.ServerMetadata %></td>
+    </tr>
+  <% end %>
+</table>

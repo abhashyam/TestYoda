@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+  <title>TestYoda</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    <div id="logo"><%= image_tag "RightScaleLogo.png" %>
+    <span id="chartheader">Continuous Regression Test Results</span>
+  </div>
+  </div>
+<%= yield %>
+  <div id="footer">
+    <div id="monkey"></div>
+  </div>
+</body>
+</html>

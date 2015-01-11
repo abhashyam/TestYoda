@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>TimeStamp</th>
+    <th>Application</th>
+    <th>Passed</th>
+    <th>failed</th>
+    <th>pending</th>
+  </tr>
+  <% @runs.each do |run| %>
+    <tr>
+      <td><%= run.id %></td>
+      <td><%= run.timestamp %></td>
+      <td><%= run.application_name %></td>
+      <td><%= run.passed %></td>
+      <td><%= run.failed %></td>
+      <td><%= run.pending %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,2 @@
+class RunDetailController < ApplicationController
+end
